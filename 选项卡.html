@@ -53,23 +53,23 @@
         </div>
     </div>
     <script>
-        var arr = [1111111,2222222,3333333];
-        var oContainer = document.getElementById('container');
+        var arr = [1111111,2222222,3333333];//假设从数据库中获取数据
+        //var oContainer = document.getElementById('container');
         var oMenu = document.getElementById('menu');
         var aLi = oMenu.getElementsByTagName('li');
         var oContent = document.getElementById('content');
-                        //只能是document 会报错
+                        //只能是document 会报错 byid 只能用一次
         var last = 0;//最后点击li的索引
-        for (var i=0;i<=aLi.length;i++){
-            aLi[i].index = i;
-            aLi[i].onclick=function(){
-                aLi[last].className = "";
+        for (var i=0;i<aLi.length;i++){
+            aLi[i].index = i;//自定义属性
+            aLi[i].onclick=function(){//绑定单击事件
+                aLi[last].className = "";//使上次选中的标签样式消失
                 this.className ='selected';
-                last = this.index;
+                last = this.index;//重置
                 oContent.innerHTML = arr[this.index];
                 //innerHTML 替换 重新赋值
            }
         }
-        </script>
+    </script>
 </body>
 </html>
