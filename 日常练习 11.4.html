@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>日常练习11.4</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        ul,ol{
+            list-style: none;
+            float: left;
+            width: 100px;
+            height: 100px;
+            margin-right: 10px;
+
+        }
+        li{
+            float: none;
+            width: 100px;
+            height: 100px;
+            background:gray;
+            text-align: center;
+            line-height: 100px;
+            margin-bottom: 10px;
+        }
+        .selected{
+            background: orange;
+        }
+
+    </style>
+</head>
+<body>
+    <ul>
+        <li class="selected">1</li>
+        <li>2</li>
+    </ul>
+    <ul>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+    <script>
+        var aLi = document.getElementsByTagName('li');
+        for(var i =0;i<aLi.length;i++){
+            aLi[i].onmouseover =function(){
+                for(var i =0;i<aLi.length;i++){
+                    aLi[i].index= i;
+                    aLi[i].className='';
+                }
+                aLi[this.index].className='selected';
+            }
+        }
+    </script>
+</body>
+</html>
