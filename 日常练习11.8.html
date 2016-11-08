@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>日常联系11.8</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        ul{
+            list-style: none;
+            position: relative;
+            left: 1100px;
+        }
+        #content li{
+            float: left;
+            width: 100px;
+            height: 100px;
+            background: #cccccc;
+            line-height: 100px;
+            text-align: center;
+            margin-right: 10px;
+        }
+        #btn{
+            background: #cccccc;
+            
+        }
+    </style>
+</head>
+<body>
+    <ul id="content">
+        <li>到</li>
+        <li>底</li>
+        <li>谁</li>
+        <li>傻</li>
+        <li>逼</li>
+    </ul>
+        <button id="btn">点我</button>
+    <script>
+        var oContent = document.getElementById('content');
+        var oBtn = document.getElementById('button');
+            setInterval(function(){
+            oContent.style.left = oContent.offsetLeft - 1 +'px';
+                if(oContent.offsetLeft = 0){
+                    oContent.style.left = 1000
+                }
+
+        },10);
+
+
+    </script>
+</body>
+</html>
