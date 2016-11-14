@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>日常练习11.14</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        #content{
+            width: 100px;
+            height: 500px;
+            background: #cccccc;
+            position: relative;
+
+        }
+        #a{
+            width: 100px;
+            height: 50px;
+            background: #ff0000;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div id="content">
+        <div id="a"></div>
+    </div>
+    <script>
+        var oContent = document.getElementById('content');
+        var oa = document.getElementById('a');
+        oa.onmousedown = function(){
+            document.onmousemove = function(e){
+                e = e || window.event;
+                iDisY = e.clientY - oa.offsetTop;
+                oa.style.top = iDisY + 'px';
+                return false;
+            };
+            document.onmouseup = function(){
+                document.onmousemove = null;
+                document.onmouseup = null;
+            };
+        };
+    </script>
+</body>
+</html>
