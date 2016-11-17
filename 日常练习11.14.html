@@ -12,10 +12,10 @@
             width: 100px;
             height: 500px;
             background: #cccccc;
-            position: relative;
+            position: absolute;
 
         }
-        #a{
+        #float{
             width: 100px;
             height: 50px;
             background: #ff0000;
@@ -25,16 +25,18 @@
 </head>
 <body>
     <div id="content">
-        <div id="a"></div>
     </div>
+    <div id="float"></div>
     <script>
         var oContent = document.getElementById('content');
-        var oa = document.getElementById('a');
-        oa.onmousedown = function(){
+        var oFloat = document.getElementById('float');
+        oFloat.onmousedown = function(e){
+            e = e || window.event;
+            iDisY = e.clientY - oFloat.offsetTop;
             document.onmousemove = function(e){
                 e = e || window.event;
-                iDisY = e.clientY - oa.offsetTop;
-                oa.style.top = iDisY + 'px';
+
+                oFloat.style.top = e.clientY - iDisY + 'px';
                 return false;
             };
             document.onmouseup = function(){
